@@ -1600,6 +1600,17 @@
   hasPushProtection: false
   hasValidityCheck: false
   isduplicate: false
+- provider: Cohere
+  supportedSecret: Cohere API Key
+  secretType: cohere_api_key
+  versions:
+    fpt: '*'
+    ghec: '*'
+  isPublic: false
+  isPrivateWithGhas: true
+  hasPushProtection: false
+  hasValidityCheck: false
+  isduplicate: false
 - provider: Contentful
   supportedSecret: Contentful Personal Access Token
   secretType: contentful_personal_access_token
@@ -2215,7 +2226,7 @@
     fpt: '*'
     ghec: '*'
     ghes: '>=3.5'
-  isPublic: false
+  isPublic: true
   isPrivateWithGhas: true
   hasPushProtection: true
   hasValidityCheck: true
@@ -2227,7 +2238,7 @@
     fpt: '*'
     ghec: '*'
     ghes: '>=3.5'
-  isPublic: false
+  isPublic: true
   isPrivateWithGhas: true
   hasPushProtection: true
   hasValidityCheck: true
@@ -2239,7 +2250,7 @@
     fpt: '*'
     ghec: '*'
     ghes: '>=3.5'
-  isPublic: false
+  isPublic: true
   isPrivateWithGhas: true
   hasPushProtection: true
   hasValidityCheck: true
@@ -2251,7 +2262,7 @@
     fpt: '*'
     ghec: '*'
     ghes: '>=3.5'
-  isPublic: false
+  isPublic: true
   isPrivateWithGhas: true
   hasPushProtection: true
   hasValidityCheck: true
@@ -2263,7 +2274,7 @@
     fpt: '*'
     ghec: '*'
     ghes: '>=3.5'
-  isPublic: false
+  isPublic: true
   isPrivateWithGhas: true
   hasPushProtection: true
   hasValidityCheck: true
@@ -2275,7 +2286,7 @@
     fpt: '*'
     ghec: '*'
     ghes: '>=3.14'
-  isPublic: false
+  isPublic: true
   isPrivateWithGhas: true
   hasPushProtection: false
   hasValidityCheck: false
@@ -3117,7 +3128,7 @@
   isPublic: false
   isPrivateWithGhas: true
   hasPushProtection: true
-  hasValidityCheck: false
+  hasValidityCheck: '{% ifversion fpt or ghes %}false{% else %}true{% endif %}'
   isduplicate: false
 - provider: Midtrans
   supportedSecret: Midtrans Sandbox Server Key
@@ -3126,6 +3137,17 @@
     fpt: '*'
     ghec: '*'
     ghes: '*'
+  isPublic: false
+  isPrivateWithGhas: true
+  hasPushProtection: false
+  hasValidityCheck: '{% ifversion fpt or ghes %}false{% else %}true{% endif %}'
+  isduplicate: false
+- provider: Mistral AI
+  supportedSecret: Mistral AI API Key
+  secretType: mistral_ai_api_key
+  versions:
+    fpt: '*'
+    ghec: '*'
   isPublic: false
   isPrivateWithGhas: true
   hasPushProtection: false
@@ -3475,7 +3497,7 @@
   isPublic: true
   isPrivateWithGhas: true
   hasPushProtection: true
-  hasValidityCheck: false
+  hasValidityCheck: '{% ifversion fpt or ghes %}false{% else %}true{% endif %}'
   isduplicate: false
 - provider: Onfido
   supportedSecret: Onfido Sandbox API Token
@@ -3487,7 +3509,7 @@
   isPublic: true
   isPrivateWithGhas: true
   hasPushProtection: false
-  hasValidityCheck: false
+  hasValidityCheck: '{% ifversion fpt or ghes %}false{% else %}true{% endif %}'
   isduplicate: false
 - provider: OpenAI
   supportedSecret: OpenAI API Key
@@ -3579,6 +3601,17 @@
     fpt: '*'
     ghec: '*'
     ghes: '>=3.18'
+  isPublic: false
+  isPrivateWithGhas: true
+  hasPushProtection: false
+  hasValidityCheck: false
+  isduplicate: false
+- provider: Perplexity
+  supportedSecret: Perplexity API Key
+  secretType: perplexity_api_key
+  versions:
+    fpt: '*'
+    ghec: '*'
   isPublic: false
   isPrivateWithGhas: true
   hasPushProtection: false
@@ -3725,9 +3758,9 @@
     ghes: '>=3.17'
   isPublic: true
   isPrivateWithGhas: true
-  hasPushProtection: false
+  hasPushProtection: true
   hasValidityCheck: false
-  isduplicate: false
+  isduplicate: true
 - provider: Polar
   supportedSecret: Polar Authorization Code
   secretType: polar_authorization_code
@@ -3737,9 +3770,9 @@
     ghes: '>=3.17'
   isPublic: true
   isPrivateWithGhas: true
-  hasPushProtection: false
+  hasPushProtection: true
   hasValidityCheck: false
-  isduplicate: false
+  isduplicate: true
 - provider: Polar
   supportedSecret: Polar Client Registration Token
   secretType: polar_client_registration_token
@@ -3749,9 +3782,9 @@
     ghes: '>=3.17'
   isPublic: true
   isPrivateWithGhas: true
-  hasPushProtection: false
+  hasPushProtection: true
   hasValidityCheck: false
-  isduplicate: false
+  isduplicate: true
 - provider: Polar
   supportedSecret: Polar Client Secret
   secretType: polar_client_secret
@@ -3761,7 +3794,18 @@
     ghes: '>=3.17'
   isPublic: true
   isPrivateWithGhas: true
-  hasPushProtection: false
+  hasPushProtection: true
+  hasValidityCheck: false
+  isduplicate: true
+- provider: Polar
+  supportedSecret: Polar Customer Session Token
+  secretType: polar_customer_session_token
+  versions:
+    fpt: '*'
+    ghec: '*'
+  isPublic: true
+  isPrivateWithGhas: true
+  hasPushProtection: true
   hasValidityCheck: false
   isduplicate: false
 - provider: Polar
@@ -3773,9 +3817,9 @@
     ghes: '>=3.17'
   isPublic: true
   isPrivateWithGhas: true
-  hasPushProtection: false
+  hasPushProtection: true
   hasValidityCheck: false
-  isduplicate: false
+  isduplicate: true
 - provider: Polar
   supportedSecret: Polar Refresh Token
   secretType: polar_refresh_token
@@ -3785,7 +3829,18 @@
     ghes: '>=3.17'
   isPublic: true
   isPrivateWithGhas: true
-  hasPushProtection: false
+  hasPushProtection: true
+  hasValidityCheck: false
+  isduplicate: true
+- provider: Polar
+  supportedSecret: Polar User Session Token
+  secretType: polar_user_session_token
+  versions:
+    fpt: '*'
+    ghec: '*'
+  isPublic: true
+  isPrivateWithGhas: true
+  hasPushProtection: true
   hasValidityCheck: false
   isduplicate: false
 - provider: Postman
@@ -3798,7 +3853,7 @@
   isPublic: true
   isPrivateWithGhas: true
   hasPushProtection: true
-  hasValidityCheck: false
+  hasValidityCheck: '{% ifversion fpt or ghes %}false{% else %}true{% endif %}'
   isduplicate: false
 - provider: Postman
   supportedSecret: Postman Collection Key
@@ -3810,7 +3865,7 @@
   isPublic: true
   isPrivateWithGhas: true
   hasPushProtection: true
-  hasValidityCheck: false
+  hasValidityCheck: '{% ifversion fpt or ghes %}false{% else %}true{% endif %}'
   isduplicate: false
 - provider: Prefect
   supportedSecret: Prefect Server API Key
@@ -4086,7 +4141,7 @@
   isPublic: true
   isPrivateWithGhas: true
   hasPushProtection: true
-  hasValidityCheck: false
+  hasValidityCheck: '{% ifversion fpt or ghes %}false{% else %}true{% endif %}'
   isduplicate: false
 - provider: SendGrid
   supportedSecret: SendGrid API Key
